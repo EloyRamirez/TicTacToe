@@ -6,14 +6,15 @@
 // Description: Tic-Tac-Toe Basic Implementation
 //+++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include &lt;iostream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;ctime&gt;
-#include &lt;iomanip&gt;
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
 using namespace std;
 
-char a=&#39;1&#39;,b=&#39;2&#39;,c=&#39;3&#39;,d=&#39;4&#39;,e=&#39;5&#39;,f=&#39;6&#39;,g=&#39;7&#39;,h=&#39;8&#39;,i=&#39;9&#39;; // Global variables
-// for the board
+char a='1',b='2',c='3',d='4',e='5',f='6',g='7',h='8',i='9'; // Global variables
+                                                            // for the board
 
 //+++++++++++++++++++++++++++++++++
 // Function for drawing board with
@@ -22,24 +23,23 @@ char a=&#39;1&#39;,b=&#39;2&#39;,c=&#39;3&#39;,d=&#39;4&#39;,e=&#39;5&#39;,f=&#3
 
 void board()
 {
-cout &lt;&lt; &quot;\t Tic Tac Toe\n\n&quot;;
+    cout << "\t Tic Tac Toe\n\n";
 
-cout &lt;&lt; &quot;User (X) - Computer (O)\n\n&quot;;
+    cout << "User (X) - Computer (O)\n\n";
 
-cout &lt;&lt; &quot; | | &quot; &lt;&lt; endl;
+    cout << "     |     |     " << endl;
+    cout << "  " << a << "  |  " << b << "  |  " << c << "  " << endl;
+    cout << "     |     |     " << endl;
+    cout << "----- ----- -----" << endl;
+    cout << "     |     |     " << endl;
+    cout << "  " << d << "  |  " << e << "  |  " << f << "  " << endl;
+    cout << "     |     |     " << endl;
+    cout << "----- ----- -----" << endl;
+    cout << "     |     |     " << endl;
+    cout << "  " << g << "  |  " << h << "  |  " << i << "  " << endl;
+    cout << "     |     |     \n";
 
-cout &lt;&lt; &quot; &quot; &lt;&lt; a &lt;&lt; &quot; | &quot; &lt;&lt; b &lt;&lt; &quot; | &quot; &lt;&lt; c &lt;&lt; &quot; &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; | | &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot;----- ----- -----&quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; | | &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; &quot; &lt;&lt; d &lt;&lt; &quot; | &quot; &lt;&lt; e &lt;&lt; &quot; | &quot; &lt;&lt; f &lt;&lt; &quot; &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; | | &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot;----- ----- -----&quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; | | &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; &quot; &lt;&lt; g &lt;&lt; &quot; | &quot; &lt;&lt; h &lt;&lt; &quot; | &quot; &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt; endl;
-cout &lt;&lt; &quot; | | \n&quot;;
-
-return;
+    return;
 }
 
 //+++++++++++++++++++++++++++++++++
@@ -47,309 +47,301 @@ return;
 // is within valid range
 //+++++++++++++++++++++++++++++++++
 
-int validity_check(int&amp; choice)
+int validity_check(int& choice)
 {
-if (choice &lt; 1 || choice &gt; 9) // If the player chooses a number smaller
-// than 1 or larger than 9, the console
-// outputs &quot;invalid...&quot;
-{
-cout &lt;&lt; &quot;Invalid input: the position indicator has to be in the range &quot;
-&quot;of 1 to 9&quot; &lt;&lt; endl;
-}
-return (choice);
+    if (choice < 1 || choice > 9) // If the player chooses a number smaller
+                                  // than 1 or larger than 9, the console
+                                  // outputs "invalid..."
+    {
+        cout << "Invalid input: the position indicator has to be in the range "
+                "of 1 to 9" << endl;
+    }
+    return (choice);
 }
 
 //+++++++++++++++++++++++++++++++++++
 // Function for checking if position
 // chosen is not occupied
-
 //+++++++++++++++++++++++++++++++++++
 
-//++++++++++++
-// User input
-//++++++++++++
+    //++++++++++++
+    // User input
+    //++++++++++++
 
-int user_turn(int&amp; choice)
+int user_turn(int& choice)
 {
-bool done = false;
+    bool done = false;
 
-do
-{
-switch(choice)
-{
-case 1:
-{
-if (choice == 1 &amp;&amp; a == &#39;1&#39;) /* If the player chooses 1 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-a = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 2:
-{
-if (choice == 2 &amp;&amp; b == &#39;2&#39;) /* If the player chooses 2 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
+    do
+    {
+        switch(choice)
+        {
+            case 1:
+            {
+                if (choice == 1 && a == '1') /* If the player chooses 1 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    a = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 2:
+            {
+                if (choice == 2 && b == '2') /* If the player chooses 2 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    b = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 3:
+            {
+                if (choice == 3 && c == '3') /* If the player chooses 3 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    c = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 4:
+            {
+                if (choice == 4 && d == '4') /* If the player chooses 4 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    d = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 5:
+            {
+                if (choice == 5 && e == '5') /* If the player chooses 5 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    e = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 6:
+            {
+                if (choice == 6 && f == '6') /* If the player chooses 6 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    f = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 7:
+            {
+                if (choice == 7 && g == '7') /* If the player chooses 7 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    g = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 8:
+            {
+                if (choice == 8 && h == '8') /* If the player chooses 8 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    h = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+            case 9:
+            {
+                if (choice == 9 && i == '9') /* If the player chooses 9 and its
+                                              * not occupied then it gets
+                                              * replaced by an 'X'*/
+                {
+                    i = 'X';
+                    done = true;
+                }
+                else
+                {
+                    cout << "Invalid input: Position already occupied." << endl;
+                }
+                break;
+            }
+        }
+        if (done == false)
+        {
+            cout << "Enter your position: "; cin >> choice; /* Player enters
+                                                             * the place it
+                                                             * wants to mark */
+        }
+    }
+    while(done == false);
 
-{
-b = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 3:
-{
-if (choice == 3 &amp;&amp; c == &#39;3&#39;) /* If the player chooses 3 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-c = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 4:
-{
-if (choice == 4 &amp;&amp; d == &#39;4&#39;) /* If the player chooses 4 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-d = &#39;X&#39;;
-done = true;
-}
-
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 5:
-{
-if (choice == 5 &amp;&amp; e == &#39;5&#39;) /* If the player chooses 5 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-e = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 6:
-{
-if (choice == 6 &amp;&amp; f == &#39;6&#39;) /* If the player chooses 6 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-f = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-
-break;
-}
-case 7:
-{
-if (choice == 7 &amp;&amp; g == &#39;7&#39;) /* If the player chooses 7 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-g = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 8:
-{
-if (choice == 8 &amp;&amp; h == &#39;8&#39;) /* If the player chooses 8 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-h = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-case 9:
-{
-
-if (choice == 9 &amp;&amp; i == &#39;9&#39;) /* If the player chooses 9 and its
-* not occupied then it gets
-* replaced by an &#39;X&#39;*/
-{
-i = &#39;X&#39;;
-done = true;
-}
-else
-{
-cout &lt;&lt; &quot;Invalid input: Position already occupied.&quot; &lt;&lt; endl;
-}
-break;
-}
-}
-if (done == false)
-{
-cout &lt;&lt; &quot;Enter your position: &quot;; cin &gt;&gt; choice; /* Player enters
-* the place it
-* wants to mark */
-}
-}
-while(done == false);
-
-return(choice);
+    return(choice);
 }
 
-//++++++++++++++++
-// Computer input
-//++++++++++++++++
+    //++++++++++++++++
+    // Computer input
+    //++++++++++++++++
 
-int computer_turn(int&amp; cpu_choice)
+int computer_turn(int& cpu_choice)
 {
-bool done = false;
+    bool done = false;
 
-do
-{
-cpu_choice = (rand()%9)+1; /* Random number generator from 1 - 9 */
+    do
+    {
+        cpu_choice = (rand()%9)+1; /* Random number generator from 1 - 9 */
 
-switch(cpu_choice)
-{
-case 1:
-{
-if (cpu_choice == 1 &amp;&amp; a == &#39;1&#39;) /* If the RNG chooses 1 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-a = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 2:
-{
-if (cpu_choice == 2 &amp;&amp; b == &#39;2&#39;) /* If the RNG chooses 2 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-b = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 3:
-{
-if (cpu_choice == 3 &amp;&amp; c == &#39;3&#39;) /* If the RNG chooses 3 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
+        switch(cpu_choice)
+        {
+            case 1:
+            {
+                if (cpu_choice == 1 && a == '1') /* If the RNG chooses 1 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    a = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 2:
+            {
+                if (cpu_choice == 2 && b == '2') /* If the RNG chooses 2 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    b = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 3:
+            {
+                if (cpu_choice == 3 && c == '3') /* If the RNG chooses 3 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    c = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 4:
+            {
+                if (cpu_choice == 4 && d == '4') /* If the RNG chooses 4 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    d = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 5:
+            {
+                if (cpu_choice == 5 && e == '5') /* If the RNG chooses 5 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    e = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 6:
+            {
+                if (cpu_choice == 6 && f == '6') /* If the RNG chooses 6 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    f = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 7:
+            {
+                if (cpu_choice == 7 && g == '7') /* If the RNG chooses 7 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    g = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 8:
+            {
+                if (cpu_choice == 8 && h == '8') /* If the RNG chooses 8 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    h = 'O';
+                    done = true;
+                }
+                break;
+            }
+            case 9:
+            {
+                if (cpu_choice == 9 && i == '9') /* If the RNG chooses 9 and
+                                                  * its not occupied then it
+                                                  * gets replaced by an 'O' */
+                {
+                    i = 'O';
+                    done = true;
+                }
+                break;
+            }
+        }
+    }
+    while(done == false);
 
-c = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 4:
-{
-if (cpu_choice == 4 &amp;&amp; d == &#39;4&#39;) /* If the RNG chooses 4 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-d = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 5:
-{
-if (cpu_choice == 5 &amp;&amp; e == &#39;5&#39;) /* If the RNG chooses 5 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-e = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 6:
-{
-if (cpu_choice == 6 &amp;&amp; f == &#39;6&#39;) /* If the RNG chooses 6 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-f = &#39;O&#39;;
-
-done = true;
-}
-break;
-}
-case 7:
-{
-if (cpu_choice == 7 &amp;&amp; g == &#39;7&#39;) /* If the RNG chooses 7 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-g = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 8:
-{
-if (cpu_choice == 8 &amp;&amp; h == &#39;8&#39;) /* If the RNG chooses 8 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-h = &#39;O&#39;;
-done = true;
-}
-break;
-}
-case 9:
-{
-if (cpu_choice == 9 &amp;&amp; i == &#39;9&#39;) /* If the RNG chooses 9 and
-* its not occupied then it
-* gets replaced by an &#39;O&#39; */
-{
-i = &#39;O&#39;;
-done = true;
-
-}
-break;
-}
-}
-}
-while(done == false);
-
-return(cpu_choice);
+    return(cpu_choice);
 }
 
 //+++++++++++++++++++++++++++++++++
@@ -357,136 +349,132 @@ return(cpu_choice);
 // of choices
 //+++++++++++++++++++++++++++++++++
 
-bool check_win(bool&amp; end)
+bool check_win(bool& end)
 {
 
-if (a == &#39;X&#39; &amp;&amp; b == &#39;X&#39; &amp;&amp; c == &#39;X&#39;) /* If spaces 1, 2, &amp; 3 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (d == &#39;X&#39; &amp;&amp; e == &#39;X&#39; &amp;&amp; f == &#39;X&#39;) /* If spaces 4, 5, &amp; 6 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (g == &#39;X&#39; &amp;&amp; h == &#39;X&#39; &amp;&amp; i == &#39;X&#39;) /* If spaces 7, 8, &amp; 9 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (a == &#39;X&#39; &amp;&amp; d == &#39;X&#39; &amp;&amp; g == &#39;X&#39;) /* If spaces 1, 4, &amp; 7 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (b == &#39;X&#39; &amp;&amp; e ==&#39;X&#39; &amp;&amp; h == &#39;X&#39;) /* If spaces 2, 5, &amp; 8 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (c == &#39;X&#39; &amp;&amp; f == &#39;X&#39; &amp;&amp; i == &#39;X&#39;) /* If spaces 3, 6, &amp; 9 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (a == &#39;X&#39; &amp;&amp; e == &#39;X&#39; &amp;&amp; i == &#39;X&#39;) /* If spaces 1, 5, &amp; 9 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-else if (c == &#39;X&#39; &amp;&amp; e == &#39;X&#39; &amp;&amp; g == &#39;X&#39;) /* If spaces 3, 5, &amp; 7 are occupied
-* by &#39;X&#39; then the player wins */
-{
-end = true;
-cout &lt;&lt; &quot;Player 1 wins the game!&quot; &lt;&lt; endl;
-}
-if (a == &#39;O&#39; &amp;&amp; b == &#39;O&#39; &amp;&amp; c == &#39;O&#39;) /* If spaces 1, 2, &amp; 3 are occupied
-* by &#39;O&#39; then the computer wins */
-
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-else if (d == &#39;O&#39; &amp;&amp; e == &#39;O&#39; &amp;&amp; f == &#39;O&#39;) /* If spaces 4, 5, &amp; 6 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-else if (g == &#39;O&#39; &amp;&amp; h == &#39;O&#39; &amp;&amp; i == &#39;O&#39;) /* If spaces 7, 8, &amp; 9 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-else if (a == &#39;O&#39; &amp;&amp; d == &#39;O&#39; &amp;&amp; g == &#39;O&#39;) /* If spaces 1, 4, &amp; 7 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-else if (b == &#39;O&#39; &amp;&amp; e ==&#39;O&#39; &amp;&amp; h == &#39;O&#39;) /* If spaces 2, 5, &amp; 8 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-else if (c == &#39;O&#39; &amp;&amp; f == &#39;O&#39; &amp;&amp; i == &#39;O&#39;) /* If spaces 3, 6, &amp; 9 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-
-else if (a == &#39;O&#39; &amp;&amp; e == &#39;O&#39; &amp;&amp; i == &#39;O&#39;) /* If spaces 1, 5, &amp; 9 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-else if (c == &#39;O&#39; &amp;&amp; e == &#39;O&#39; &amp;&amp; g == &#39;O&#39;) /* If spaces 3, 5, &amp; 7 are occupied
-* by &#39;O&#39; then the computer wins */
-{
-end = true;
-cout &lt;&lt; &quot;The computer wins the game!&quot; &lt;&lt; endl;
-}
-return(end);
+    if (a == 'X' && b == 'X' && c == 'X') /* If spaces 1, 2, & 3 are occupied
+                                           * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (d == 'X' && e == 'X' && f == 'X') /* If spaces 4, 5, & 6 are occupied
+                                                * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (g == 'X' && h == 'X' && i == 'X') /* If spaces 7, 8, & 9 are occupied
+                                                * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (a == 'X' && d == 'X' && g == 'X') /* If spaces 1, 4, & 7 are occupied
+                                                * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (b == 'X' && e =='X' && h == 'X') /* If spaces 2, 5, & 8 are occupied
+                                               * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (c == 'X' && f == 'X' && i == 'X') /* If spaces 3, 6, & 9 are occupied
+                                                * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (a == 'X' && e == 'X' && i == 'X') /* If spaces 1, 5, & 9 are occupied
+                                                * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    else if (c == 'X' && e == 'X' && g == 'X') /* If spaces 3, 5, & 7 are occupied
+                                                * by 'X' then the player wins */
+    {
+        end = true;
+        cout << "Player 1 wins the game!" << endl;
+    }
+    if (a == 'O' && b == 'O' && c == 'O') /* If spaces 1, 2, & 3 are occupied
+                                           * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (d == 'O' && e == 'O' && f == 'O') /* If spaces 4, 5, & 6 are occupied
+                                                * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (g == 'O' && h == 'O' && i == 'O') /* If spaces 7, 8, & 9 are occupied
+                                                * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (a == 'O' && d == 'O' && g == 'O') /* If spaces 1, 4, & 7 are occupied
+                                                * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (b == 'O' && e =='O' && h == 'O') /* If spaces 2, 5, & 8 are occupied
+                                               * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (c == 'O' && f == 'O' && i == 'O') /* If spaces 3, 6, & 9 are occupied
+                                                * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (a == 'O' && e == 'O' && i == 'O') /* If spaces 1, 5, & 9 are occupied
+                                                * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    else if (c == 'O' && e == 'O' && g == 'O') /* If spaces 3, 5, & 7 are occupied
+                                                * by 'O' then the computer wins */
+    {
+        end = true;
+        cout << "The computer wins the game!" << endl;
+    }
+    return(end);
 }
 
 //+++++++++++++++++++++++++++++++++
 // Main function for playing game
-// &amp; making choices
+// & making choices
 //+++++++++++++++++++++++++++++++++
 
 int main()
 {
-int cpu_choice, choice;
-bool end = false;
-srand(time(NULL)); // RNG seed generator
+    int cpu_choice, choice;
+    bool end = false;
+    srand(time(NULL)); // RNG seed generator
 
-cout &lt;&lt; &quot;Welcome to the game of Tic Tac Toe.&quot; &lt;&lt; endl;
-cout &lt;&lt; &quot;Below you will indicate your position (1 - 9) as shown in the table.\n\n&quot;;
+    cout << "Welcome to the game of Tic Tac Toe." << endl;
+    cout << "Below you will indicate your position (1 - 9) as shown in the table.\n\n";
 
-do
-{
-board(); // Callback to board
-cout &lt;&lt; &quot;Enter your position: &quot;;
-cin &gt;&gt; choice; // Player picks position
+    do
+    {
+        board(); // Callback to board
+        cout << "Enter your position: ";
+        cin >> choice; // Player picks position
+        validity_check(choice); // Callback to validity checker
+        user_turn(choice); // Callback to user turn function
+        computer_turn(cpu_choice); // Callback to computer turn function
+        check_win(end); // Callback to function that checks who's winner
+    } while (end == false);
 
-validity_check(choice); // Callback to validity checker
-user_turn(choice); // Callback to user turn function
-computer_turn(cpu_choice); // Callback to computer turn function
-check_win(end); // Callback to function that checks who&#39;s winner
-} while (end == false);
-
-return (0);
+    return (0);
 }
